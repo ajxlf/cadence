@@ -1,4 +1,4 @@
-const CACHE = 'fightflow-shell-v2';
+const CACHE = 'fightflow-shell-v3';
 const ASSETS = [
   './',
   './index.html',
