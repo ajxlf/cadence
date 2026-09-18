@@ -9,7 +9,7 @@ Cadence is a self-contained planner for university, fitness, nutrition, reflecti
 - Cookbook with macros, recipes and meal-prep flags
 - Workout library for cardio, calisthenics, strength, mobility and sport
 - Browser-local persistence
-- Optional Supabase cloud sync across phone and computer
+- Automatic Supabase cloud sync across phone and computer
 - Email/password authentication
 - PWA manifest + service worker for installation on phone/desktop
 - JSON export/import backup
@@ -33,7 +33,7 @@ Open the Supabase SQL Editor and run the complete contents of:
 
 `supabase-schema.sql`
 
-The SQL enables Row Level Security and grants the authenticated role only the access needed by Cadence.
+The SQL enables Row Level Security, grants the authenticated role only the access needed by Cadence, and enables Realtime for the planner table.
 
 ### 3. Configure Supabase Auth
 
