@@ -1,13 +1,13 @@
-# FightFlow
+# Cadence
 
-FightFlow is a self-contained planner for university, boxing, nutrition and structured workouts.
+Cadence is a self-contained planner for university, fitness, nutrition, reflection and structured workouts.
 
 ## What is included
 
 - Today dashboard with daily checklist and macro totals
 - Weekly planner for classes, study, training, meals and life/admin
 - Cookbook with macros, recipes and meal-prep flags
-- Workout library for boxing, cardio, calisthenics, strength and mobility
+- Workout library for cardio, calisthenics, strength, mobility and sport
 - Browser-local persistence
 - Optional Supabase cloud sync across phone and computer
 - Email/password authentication
@@ -17,7 +17,7 @@ FightFlow is a self-contained planner for university, boxing, nutrition and stru
 
 ## Cloud architecture
 
-GitHub Pages hosts the static application. Supabase stores one private JSON record per authenticated FightFlow user. The browser uses only the Supabase publishable key; Row Level Security restricts database access to the signed-in user's row.
+GitHub Pages hosts the static application. Supabase stores one private JSON record per authenticated Cadence user. The browser uses only the Supabase publishable key; Row Level Security restricts database access to the signed-in user's row.
 
 Do not put a Supabase secret/service-role key in the browser.
 
@@ -27,13 +27,13 @@ Do not put a Supabase secret/service-role key in the browser.
 
 Create a project in the Supabase dashboard.
 
-### 2. Create the FightFlow table
+### 2. Create the Cadence table
 
 Open the Supabase SQL Editor and run the complete contents of:
 
 `supabase-schema.sql`
 
-The SQL enables Row Level Security and grants the authenticated role only the access needed by FightFlow.
+The SQL enables Row Level Security and grants the authenticated role only the access needed by Cadence.
 
 ### 3. Configure Supabase Auth
 
@@ -77,13 +77,13 @@ GitHub will provide the live site URL.
 
 ### 7. Sign in on your first device
 
-Open FightFlow on the computer, create an account, and sign in.
+Open Cadence on the computer, create an account, and sign in.
 
-If no cloud record exists yet, FightFlow uploads the planner currently stored in that browser. This makes it possible to migrate the existing local planner without manually rebuilding it.
+If no cloud record exists yet, Cadence uploads the planner currently stored in that browser. This makes it possible to migrate the existing local planner without manually rebuilding it.
 
 ### 8. Use the same account on your phone
 
-Open the same GitHub Pages URL on your phone and sign in with the same FightFlow account. The cloud planner will load automatically.
+Open the same GitHub Pages URL on your phone and sign in with the same Cadence account. The cloud planner will load automatically.
 
 You can then install the PWA to your home screen if your browser supports it.
 
@@ -91,7 +91,7 @@ You can then install the PWA to your home screen if your browser supports it.
 
 - Local browser storage remains enabled as a fallback.
 - Saved changes are queued for cloud sync shortly after an edit.
-- FightFlow checks for cloud changes periodically while open.
+- Cadence checks for cloud changes periodically while open.
 - The “Upload this device” action intentionally replaces the cloud record with the current browser copy.
 - The “Sync now” action pulls the current cloud record.
 - JSON export/import remains available as a separate backup mechanism.
