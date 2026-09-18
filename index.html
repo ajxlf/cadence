@@ -236,7 +236,7 @@ function deleteWorkout(id){db.workouts=db.workouts.filter(w=>w.id!==id);save();c
 function goWeekToday(){state.weekStart=monday(todayISO());renderWeek()}
 function changeWeek(n){state.weekStart=addDays(state.weekStart,n*7);renderWeek()}
 function setDay(d){state.selectedDate=d;setView('today')}
-function exportData(){const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='fightflow-backup-'+todayISO()+'.json';a.click();URL.revokeObjectURL(a.href);toast('Planner exported')}
+function exportData(){const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='cadence-backup-'+todayISO()+'.json';a.click();URL.revokeObjectURL(a.href);toast('Planner exported')}
 function importData(file){if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const x=JSON.parse(reader.result);if(!x.settings||!x.recipes||!x.workouts)throw Error('invalid');db=normalizeData(x);save();render();toast(cloud.user?'Imported and queued for cloud sync':'Planner imported')}catch(e){toast('Import failed')}};reader.readAsText(file)}
 function resetData(){if(!confirm('Reset Cadence to the starter data? This removes your saved planner from this browser'+(cloud.user?' and will sync the reset to your cloud account.':'')+'.'))return;db=structuredClone(defaultData);save();render();toast('Planner reset')}
 function toggleNotifications(){db.settings.notifications=!db.settings.notifications;save();if(db.settings.notifications&&'Notification' in window){Notification.requestPermission().then(p=>{if(p!=='granted'){toast('Browser notifications are not permitted.')}})}renderSettings()}
