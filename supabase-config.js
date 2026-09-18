@@ -1,5 +1,5 @@
 /*
-  FightFlow cloud configuration.
+  Cadence cloud configuration.
   Replace the two placeholder values with the URL and publishable key
   from your Supabase project. Do NOT put a service_role key here.
 */
