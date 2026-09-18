@@ -58,3 +58,19 @@ on public.fightflow_data
 for delete
 to authenticated
 using ((select auth.uid()) = user_id);
+
+-- Enable automatic cross-device sync through Supabase Realtime.
+-- The table must be part of the supabase_realtime publication for Postgres Changes subscriptions.
+do $$
+begin
+  if not exists (
+    select 1
+    from pg_publication_tables
+    where pubname = 'supabase_realtime'
+      and schemaname = 'public'
+      and tablename = 'fightflow_data'
+  ) then
+    alter publication supabase_realtime add table public.fightflow_data;
+  end if;
+end
+$$;
