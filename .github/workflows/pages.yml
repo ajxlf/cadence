@@ -1,4 +1,4 @@
-name: Deploy FightFlow to GitHub Pages
+name: Deploy Cadence to GitHub Pages
 
 on:
   push:
