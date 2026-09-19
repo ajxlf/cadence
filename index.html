@@ -112,7 +112,7 @@ const longDate=s=>new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',
 const pounds=n=>Number(n||0).toLocaleString('en-GB',{maximumFractionDigits:0});
 const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 const dowLabels=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-const APP_URL=(()=>{const u=new URL(window.location.href);u.search='';u.hash='';return u.href})();
+const APP_URL='https://ajxlf.github.io/cadence/';
 function monday(s){const d=new Date(s+'T12:00:00');const day=(d.getDay()+6)%7;d.setDate(d.getDate()-day);return isoDate(d)}
 
 const defaultData={
