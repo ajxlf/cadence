@@ -1,4 +1,4 @@
-const CACHE = 'cadence-shell-v23';
+const CACHE = 'cadence-shell-v24';
 const ASSETS = [
   './',
   './index.html',
